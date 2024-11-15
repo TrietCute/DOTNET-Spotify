@@ -5,6 +5,8 @@ namespace server
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var connString = builder.Configuration.GetConnectionString("MusicApp");
+
             var app = builder.Build();
 
             app.MapGet("/", () => "Hello World!");
